@@ -8,6 +8,21 @@
     // 而某些工具和库可能需要以 ES6 模块的方式导入这些 CommonJS 模块，这时候就可以开启 esModuleInterop 选项。
     // 开启后，在导入 CommonJS 模块时不需要再使用默认导出才能正确引入，也不需要手动处理 require() 和 module.exports。
     // 这使得导入和使用 CommonJS 模块的过程变得更加简洁方便。
-    "esModuleInterop": true
-  }
+    "esModuleInterop": true,
+
+    // 项目中使用了 @ 符号 需要告诉ts @符号代表的是什么路径
+    "baseUrl": "./",
+    "paths": {
+      "@/*": ["src/*"],
+      "#/*": ["types/*"]
+    },
+
+    // 配置 ts 的类型声明文件 这样在引入 import xx from "*.png" 时能够找到对应的类型
+    "types": ["vite/client"],
+
+    // 动态导入时 lazy(() => import("@/pages/sys/login/Login")), 提示需要 es2015
+    "lib": ["es2015"]
+  },
+  "include": ["src", "types"],
+  "exclude": ["node_modules", "dist"]
 }
