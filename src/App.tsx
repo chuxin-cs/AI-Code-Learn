@@ -1,7 +1,17 @@
+import { App as AntdApp } from "antd";
+import Router from "@/router";
+import { Helmet } from "react-helmet-async";
+import Logo from "@/assets/images/logo.png";
+
 export default function App() {
   return (
-    <>
-      <h1>chuxin: 云层上的光</h1>
-    </>
+    <AntdApp>
+      <Helmet>
+        <title>首页</title>
+        <link rel="icon" href={Logo} />
+      </Helmet>
+
+      <Router />
+    </AntdApp>
   );
 }
