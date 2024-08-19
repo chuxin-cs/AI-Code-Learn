@@ -2,13 +2,17 @@ import styled from "styled-components";
 import { useScroll } from "framer-motion";
 import { Suspense, useCallback, useEffect, useRef, useState } from "react";
 
-// import Nav from "./nav";
+import Nav from "./nav";
 import Main from "./main";
 import Header from "./header";
+import NavHorizontal from "./nav-horizontal";
+import { useSettings } from "@/store/settingStore";
 
-import { ThemeMode } from "#/enum";
+import { ThemeLayout, ThemeMode } from "#/enum";
 
 function DashboardLayout() {
+  const { themeLayout, themeMode } = useSettings();
+
   const mainEl = useRef(null);
   const { scrollY } = useScroll({ container: mainEl });
 
@@ -31,10 +35,21 @@ function DashboardLayout() {
     onOffsetTop();
   }, [onOffsetTop]);
 
+  const navVertical = (
+    <div className="z-50 hidden h-full flex-shrink-0 md:block">
+      <Nav />
+    </div>
+  );
+
+  const nav =
+    themeLayout === ThemeLayout.Horizontal ? <NavHorizontal /> : navVertical;
+
   return (
     <StyleWrapper>
       <div
-        className={`flex h-screen overflow-hidden `}
+        className={`flex h-screen overflow-hidden ${
+          themeLayout === ThemeLayout.Horizontal ? "flex-col" : ""
+        }`}
         style={{
           color: "#fff",
           background: "#000",
@@ -43,8 +58,12 @@ function DashboardLayout() {
         }}
       >
         <Suspense fallback={<div>loading...</div>}>
-          <Header></Header>
-
+          <Header
+            offsetTop={
+              themeLayout === ThemeLayout.Vertical ? offsetTop : undefined
+            }
+          />
+          {nav}
           <Main ref={mainEl} offsetTop={offsetTop} />
         </Suspense>
       </div>

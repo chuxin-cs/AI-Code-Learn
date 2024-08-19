@@ -2,7 +2,7 @@ import { forwardRef } from "react";
 import { Content } from "antd/es/layout/layout";
 
 interface Props {
-  offsetTop?: number;
+  offsetTop?: boolean;
 }
 
 const Main = forwardRef<HTMLDivElement, Props>(({ offsetTop = false }, ref) => {
