@@ -6,6 +6,9 @@ import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 
 import App from "./App";
 
+// tailwind css
+import "./theme/index.css";
+
 const root = ReactDOM.createRoot(
   document.getElementById("root")! as HTMLElement
 );

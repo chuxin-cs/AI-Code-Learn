@@ -21,7 +21,12 @@
     "types": ["vite/client"],
 
     // 动态导入时 lazy(() => import("@/pages/sys/login/Login")), 提示需要 es2015
-    "lib": ["es2015"]
+    "lib": ["es2015", "DOM"],
+
+    // 使用的模块系统类型。ESNext 支持更多特性，比如动态导入等。 import.meta
+    "module": "ESNext",
+    //
+    "moduleResolution": "Bundler"
   },
   "include": ["src", "types"],
   "exclude": ["node_modules", "dist"]
