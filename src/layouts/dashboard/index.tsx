@@ -45,7 +45,7 @@ function DashboardLayout() {
     themeLayout === ThemeLayout.Horizontal ? <NavHorizontal /> : navVertical;
 
   return (
-    <StyleWrapper>
+    <StyleWrapper $themeMode={themeMode}>
       <div
         className={`flex h-screen overflow-hidden ${
           themeLayout === ThemeLayout.Horizontal ? "flex-col" : ""
