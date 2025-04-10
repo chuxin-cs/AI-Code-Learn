@@ -1,13 +1,12 @@
 # tocc-admin
 
 ## ✨ Features
-- 🌈 React、React-Router-Dom@6
+- 🌈 React、React-Router-Dom@6、pinia
 - 📦 Vite + qiankun
 - 🛡 antd
 - ⚙️ axios、dayjs、mockjs
 - 🌍 node18+、pnpm + monorepo
-- 🎨 CSS-in-JS本，提高效率
-    "dev": "pnpm --parallel main:dev system:dev"
+- 🎨 CSS-in-JS 处理样式
 
 ## ⌨️ Development
 ```bash
