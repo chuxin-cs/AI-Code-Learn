@@ -1,13 +1,43 @@
 {
-  "name": "web",
+  "name": "tocc",
   "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
+  "description": "tocc 基于 React + Vite + QianKun 实现的后台管理系统",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "main:dev": "pnpm -F main dev",
+    "system:dev": "pnpm -F system dev"
   },
-  "keywords": [],
-  "author": "",
+  "keywords": [
+    "react",
+    "vite",
+    "qiankun",
+    "tocc",
+    "admin",
+    "tocc-admin"
+  ],
+  "author": "chuxin",
   "license": "ISC",
-  "packageManager": "pnpm@10.4.1"
+  "dependencies": {
+    "@ant-design/icons": "^6.0.0",
+    "ahooks": "^3.8.4",
+    "antd": "^5.24.6",
+    "axios": "^1.8.4",
+    "dayjs": "^1.11.13",
+    "qiankun": "^2.10.16",
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0",
+    "zustand": "^5.0.3"
+  },
+  "devDependencies": {
+    "@eslint/js": "^9.21.0",
+    "@types/react": "^19.0.10",
+    "@types/react-dom": "^19.0.4",
+    "@vitejs/plugin-react": "^4.3.4",
+    "eslint": "^9.21.0",
+    "eslint-plugin-react-hooks": "^5.1.0",
+    "eslint-plugin-react-refresh": "^0.4.19",
+    "globals": "^15.15.0",
+    "typescript": "~5.7.2",
+    "typescript-eslint": "^8.24.1",
+    "vite": "^6.2.0"
+  }
 }
