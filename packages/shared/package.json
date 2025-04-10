@@ -1,0 +1,28 @@
+{
+  "name": "@tocc/shared",
+  "version": "1.0.0",
+  "description": "tocc shared",
+  "scripts": {
+    "build": "pnpm unbuild",
+    "stub": "pnpm unbuild --stub"
+  },
+  "files": [
+    "dist"
+  ],
+  "sideEffects": false,
+  "exports": {
+    "./map": {
+      "types": "./src/map/index.ts",
+      "development": "./src/map/index.ts",
+      "default": "./dist/map/index.mjs"
+    },
+    "./utils": {
+      "types": "./src/utils/index.ts",
+      "development": "./src/utils/index.ts",
+      "default": "./dist/utils/index.mjs"
+    }
+  },
+  "author": "chuxin",
+  "type": "module",
+  "license": "MIT"
+}
