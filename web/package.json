@@ -1,6 +1,7 @@
 {
   "name": "tocc",
   "version": "1.0.0",
+  "private": true,
   "description": "tocc 基于 React + Vite + QianKun 实现的后台管理系统",
   "scripts": {
     "main:dev": "pnpm -F main dev",
@@ -15,7 +16,6 @@
     "tocc-admin"
   ],
   "author": "chuxin",
-  "license": "ISC",
   "dependencies": {
     "@ant-design/icons": "^6.0.0",
     "ahooks": "^3.8.4",
@@ -39,5 +39,6 @@
     "typescript": "~5.7.2",
     "typescript-eslint": "^8.24.1",
     "vite": "^6.2.0"
-  }
+  },
+  "license": "MIT"
 }
