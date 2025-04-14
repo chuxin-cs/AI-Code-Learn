@@ -1,3 +1,4 @@
+// react
 import { lazy, Suspense } from 'react';
 import { Outlet } from 'react-router-dom';
 import type { RouteObject } from 'react-router-dom';
