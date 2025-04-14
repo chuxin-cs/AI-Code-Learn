@@ -1,5 +1,10 @@
 function NavigationPage() {
-  return <div>NavigationPage</div>;
+  return (
+    <div>
+      <div id='systemContainer'></div>
+      <div id='baseContainer'></div>
+    </div>
+  );
 }
 
 export default NavigationPage;
