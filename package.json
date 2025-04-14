@@ -27,7 +27,6 @@
     "@ant-design/icons-vue": "^7.0.1",
     "@tocc/constants": "workspace:*",
     "@tocc/shared": "workspace:*",
-    "@types/nprogress": "^0.2.3",
     "@vueuse/core": "^13.1.0",
     "ahooks": "^3.8.4",
     "ant-design-vue": "^4.2.6",
@@ -50,6 +49,7 @@
     "zustand": "^5.0.3"
   },
   "devDependencies": {
+    "@types/nprogress": "^0.2.3",
     "@eslint/js": "^9.21.0",
     "@types/react": "^19.0.10",
     "@types/react-dom": "^19.0.4",
