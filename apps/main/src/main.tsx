@@ -10,6 +10,12 @@ registerMicroApps([
     entry: '//localhost:9001',
     container: '#systemContainer',
     activeRule: '/system',
+  },
+  {
+    name: 'base',
+    entry: '//localhost:9002',
+    container: '#baseContainer',
+    activeRule: '/base',
   }
 ])
 

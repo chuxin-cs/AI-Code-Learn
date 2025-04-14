@@ -16,6 +16,7 @@ function App() {
       </div>
 
       <div id="systemContainer"></div>
+      <div id="baseContainer"></div>
     </>
   );
 }
