@@ -25,7 +25,7 @@ type LoginType = 'phone' | 'account';
 
 function Login() {
   const { token } = theme.useToken();
-  const [loginType, setLoginType] = useState<LoginType>('phone');
+  const [loginType, setLoginType] = useState<LoginType>('account');
 
   const iconStyles: CSSProperties = {
     marginInlineStart: '16px',
@@ -39,17 +39,14 @@ function Login() {
     <ProConfigProvider hashed={false}>
       <div style={{ backgroundColor: token.colorBgContainer }}>
         <LoginForm
-          logo='https://github.githubassets.com/favicons/favicon.png'
-          title='Github'
-          subTitle='全球最大的代码托管平台'
-          actions={
-            <Space>
-              其他登录方式
-              <AlipayCircleOutlined style={iconStyles} />
-              <TaobaoCircleOutlined style={iconStyles} />
-              <WeiboCircleOutlined style={iconStyles} />
-            </Space>
-          }
+          logo='https://tocc-test.123cx.com/img/loginBg.8abe399e.png'
+          title='Tocc'
+          subTitle='监管平台'
+          onFinish={async (values) => {
+            console.log('登录表单数据:', values);
+            message.success('提交成功');
+            return true;
+          }}
         >
           <Tabs
             centered

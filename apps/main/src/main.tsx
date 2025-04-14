@@ -12,13 +12,13 @@ import { registerMicroApps, start } from 'qiankun';
 registerMicroApps([
   {
     name: 'system',
-    entry: '//localhost:9001',
+    entry: '//localhost:7001',
     container: '#systemContainer',
     activeRule: '/system',
   },
   {
     name: 'base',
-    entry: '//localhost:9002',
+    entry: '//localhost:7002',
     container: '#baseContainer',
     activeRule: '/base',
   },

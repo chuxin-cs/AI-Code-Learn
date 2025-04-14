@@ -11,7 +11,7 @@ export default defineConfig({
     },
   },
   server: {
-    port: 9002,
+    port: 7002,
     headers: {
       'Access-Control-Allow-Origin': '*'
     }
