@@ -1,0 +1,18 @@
+{
+  "name": "@tocc/config",
+  "version": "1.0.0",
+  "description": "tocc config",
+  "author": "chuxin",
+  "type": "module",
+  "license": "MIT",
+  "files": [
+    "dist"
+  ],
+  "sideEffects": false,
+  "exports": {
+    ".": {
+      "types": "./src/index.ts",
+      "default": "./src/index.ts"
+    }
+  }
+}
