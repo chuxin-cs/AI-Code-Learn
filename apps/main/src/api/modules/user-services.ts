@@ -1,7 +1,7 @@
 import request from '../request';
 import { baseUrl } from '@tocc/config';
 export const loginByUsername = (username, password) => {
-  request.post({
+  return request.post({
     url: `${baseUrl}/blade-auth/oauth/token`,
     params: {
       tenantId: '',

@@ -50,7 +50,11 @@ function Login() {
           subTitle='监管平台'
           onFinish={async ({ username, password }) => {
             try {
-              await loginByUsername(username, md5(password));
+              const res = await loginByUsername(username, md5(password));
+              console.log(res, '===');
+              // commit('SET_TOKEN', data.access_token);
+              // commit('SET_REFRESH_TOKEN', data.refresh_token);
+              // commit('SET_TENANT_ID', data.tenant_id);
               navigate('/navigation');
               message.success('登录成功');
             } catch (error) {
