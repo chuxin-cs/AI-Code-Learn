@@ -17,6 +17,9 @@ importers:
       '@ant-design/pro-components':
         specifier: ^2.8.7
         version: 2.8.7(antd@5.24.6(react-dom@19.1.0(react@19.1.0))(react@19.1.0))(rc-field-form@2.7.0(react-dom@19.1.0(react@19.1.0))(react@19.1.0))(react-dom@19.1.0(react@19.1.0))(react@19.1.0)
+      '@tocc/config':
+        specifier: workspace:*
+        version: link:packages/config
       '@tocc/constants':
         specifier: workspace:*
         version: link:packages/constants
@@ -47,6 +50,9 @@ importers:
       immer:
         specifier: ^10.1.1
         version: 10.1.1
+      js-md5:
+        specifier: ^0.8.3
+        version: 0.8.3
       nprogress:
         specifier: ^0.2.0
         version: 0.2.0
@@ -144,6 +150,8 @@ importers:
   apps/main: {}
 
   apps/system: {}
+
+  packages/config: {}
 
   packages/constants: {}
 
@@ -1894,6 +1902,9 @@ packages:
   js-cookie@3.0.5:
     resolution: {integrity: sha512-cEiJEAEoIbWfCZYKWhVwFuvPX1gETRYPw6LlaTKoxD3s2AkXzkCjnp6h0V77ozyqj0jakteJ4YqDJT830+lVGw==}
     engines: {node: '>=14'}
+
+  js-md5@0.8.3:
+    resolution: {integrity: sha512-qR0HB5uP6wCuRMrWPTrkMaev7MJZwJuuw4fnwAzRgP4J4/F8RwtodOKpGp4XpqsLBFzzgqIO42efFAyz2Et6KQ==}
 
   js-tokens@4.0.0:
     resolution: {integrity: sha512-RdJUflcE3cUzKiMqQgsCu06FPu9UdIJO0beYbPhHN4k6apgJtifcoCtT9bcxOpYBtpD2kCM6Sbzg4CausW/PKQ==}
@@ -5246,6 +5257,8 @@ snapshots:
   jiti@2.4.2: {}
 
   js-cookie@3.0.5: {}
+
+  js-md5@0.8.3: {}
 
   js-tokens@4.0.0: {}
 

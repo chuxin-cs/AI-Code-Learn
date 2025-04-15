@@ -23,6 +23,10 @@ import { Space, Tabs, message, theme } from 'antd';
 
 type LoginType = 'phone' | 'account';
 
+import md5 from 'js-md5';
+import { useNavigate } from 'react-router-dom';
+import { loginByUsername } from '@/api/modules/user-services';
+
 function Login() {
   const { token } = theme.useToken();
   const [loginType, setLoginType] = useState<LoginType>('account');
@@ -35,6 +39,8 @@ function Login() {
     cursor: 'pointer',
   };
 
+  const navigate = useNavigate();
+
   return (
     <ProConfigProvider hashed={false}>
       <div style={{ backgroundColor: token.colorBgContainer }}>
@@ -42,10 +48,14 @@ function Login() {
           logo='https://tocc-test.123cx.com/img/loginBg.8abe399e.png'
           title='Tocc'
           subTitle='监管平台'
-          onFinish={async (values) => {
-            console.log('登录表单数据:', values);
-            message.success('提交成功');
-            if()
+          onFinish={async ({ username, password }) => {
+            try {
+              await loginByUsername(username, md5(password));
+              navigate('/navigation');
+              message.success('登录成功');
+            } catch (error) {
+              message.error('登录失败，请重试');
+            }
             return true;
           }}
         >

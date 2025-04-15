@@ -11,5 +11,22 @@ export default defineConfig({
   },
   server: {
     port: 7000,
-  }
+    proxy: {
+      '/api': {
+        //本地服务接口地址
+        target: 'http://172.16.101.170:80',
+        ws: true,
+        pathRewrite: {
+          '^/api': '/api',
+        },
+      },
+      '/blade-auth': {
+        target: 'https://apis-tocc-test.123cx.com',
+        changeOrigin: true,
+        pathRewrite: {
+          '^/blade-auth': '/blade-auth',
+        },
+      },
+    },
+  },
 })
