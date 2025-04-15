@@ -1,18 +1,37 @@
 import axios from 'axios';
-import type { AxiosRequestConfig, AxiosError, AxiosResponse } from 'axios';
-
 import type { Result } from '@/types/api';
+import type { AxiosRequestConfig, AxiosError, AxiosResponse } from 'axios';
+import { getToken } from './auth';
+import { Base64 } from 'js-base64';
 
 // 创建axios实例
 const axiosInstance = axios.create({
   baseURL: import.meta.env.VITE_BASE_API,
   timeout: 50 * 1000,
+  defaults: {
+    withCredentials: false,
+  },
 });
 
 // 请求拦截
 axiosInstance.interceptors.request.use(
   (config) => {
-    config.headers.Authorization = `Bearer ${localStorage.getItem('token')}`;
+    
+    const meta = config.meta || {};
+		const isToken = meta.isToken === false;
+
+    config.headers['Authorization'] = `Basic ${Base64.encode(`saber:saber_secret`)}`;
+
+    //让每个请求携带token
+    if (getToken() && !isToken) {
+      config.headers['Blade-Auth'] = 'bearer ' + getToken();
+    }
+
+    //headers中配置text请求
+    if (config.text === true) {
+      config.headers['Content-Type'] = 'text/plain';
+    }
+
     return config;
   },
   (error) => {
